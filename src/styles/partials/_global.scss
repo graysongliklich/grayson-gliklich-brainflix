@@ -1,0 +1,81 @@
+@use "variable" as *;
+@use "typography" as *;
+@use "mixin" as *;
+
+
+* {
+    margin: unset;
+    padding: unset;
+    border: unset;
+    text-decoration: none;
+    list-style: none;
+    font-family: "AvenirNextLTPro";
+}
+
+header {
+
+    @include mobile {
+        padding: 0 16px;
+
+    }
+    @include tablet {
+        padding: 0 24px;
+
+    }
+    @include desktop {
+        padding: 0 32px;
+    }
+}
+
+section {
+
+    @include mobile {
+        padding: 0 16px;
+
+    }
+    @include tablet {
+        padding: 0 24px;
+
+    }
+    @include desktop {
+        padding: 0 32px;
+    }
+}
+
+h1 {
+    color: $brainflix-black;
+    @include mobile {
+        @include mobile-headlines-padding;
+        @include mobile-page-header;
+    }
+    @include tablet {
+        @include desktop-tablet-page-header;
+    }
+}
+
+h2 {
+
+}
+
+h3 {
+    color: $brainflix-black;
+
+    @include mobile {
+        @include mobile-subheader;
+    }
+    @include tablet {
+        @include desktop-tablet-subheader;
+    }
+}
+
+p {
+    color: $brainflix-black;
+    font-weight: 400;
+
+    @include mobile {
+        @include mobile-bodycopy
+    }
+    @include tablet {
+        @include desktop-tablet-bodycopy
+    }
+}

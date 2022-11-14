@@ -1,0 +1,48 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variable" as *;
+@use "../../styles/partials/mixin" as *;
+@use "../../styles/partials/typography" as *;
+
+.featured {
+    display: flex;
+    @include mobile {
+        @include mobile-component-padding;
+        flex-direction: row;
+        gap: 8px
+    }
+    @include tablet {
+        @include tablet-desktop-component-padding;
+    }
+    @include desktop {
+
+    }
+
+    &__thumbnail {
+        border-radius: 4px;
+    }
+
+    &__details-container {
+        display: flex;
+        @include mobile {
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        @include desktop {
+            justify-content: flex-start;
+        }
+
+    }
+
+    &__title {
+
+    }
+
+    &__publisher {
+        @include mobile {
+            @include mobile-bodycopy;
+        }
+        @include tablet {
+            @include desktop-tablet-bodycopy;
+        }
+    }
+}

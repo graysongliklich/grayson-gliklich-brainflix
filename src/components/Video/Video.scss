@@ -1,0 +1,106 @@
+@use "../../styles/partials/variable" as *;
+@use "../../styles/partials/mixin" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/global" as *;
+
+
+.video {
+
+    &__title {
+
+    }
+
+    &__metadata-container {
+        display: flex;
+        @include mobile {
+            flex-direction: row;
+            justify-content: space-between;
+            border-top: 1px #e1e1e1 solid;
+            @include mobile-headlines-padding
+        }
+        @include tablet {
+            margin-bottom: 4px;
+            border: none;
+            padding: 0;
+        }
+    }
+
+    &__metadata--left {
+        display: flex;
+        @include mobile {
+            flex-direction: column;
+            gap:12px
+        }
+        @include tablet {
+            flex-direction: row;
+            gap: 24px;
+        }
+    }
+
+    &__metadata-item {
+        color: $silver;
+        @include mobile {
+            @include mobile-subheader;
+            font-weight: 400;
+        }
+        @include tablet {
+            @include desktop-tablet-subheader;
+            font-weight: 400;
+        }
+    }
+
+    &__publisher {
+
+    }
+
+    &__date {
+
+    }
+
+    &__metadata--right {
+        display: flex;
+        @include mobile {
+            flex-direction: column;
+            gap:12px
+        }
+        @include tablet {
+            flex-direction: row;
+            gap: 24px;
+        }
+    }
+
+    &__views-container {
+        display: flex;
+        @include mobile {
+            flex-direction: row;
+            gap:8px;
+        }
+    }
+
+    &__viewcount {
+
+    }
+
+
+    &__likes-container {
+        display: flex;
+        @include mobile {
+            flex-direction: row;
+            gap:8px;
+        }
+    }
+
+    &__likescount {
+
+    }
+
+    &__description {
+        border-top: 1px #e1e1e1 solid;
+        @include mobile {
+            @include mobile-headlines-padding
+        }
+        @include tablet {
+            // @include tablet-desktop-headlines-padding
+        }
+    }
+}

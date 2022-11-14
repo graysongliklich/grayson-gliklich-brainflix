@@ -1,0 +1,17 @@
+@use "variable" as *;
+
+//Font Regular 
+@font-face {
+    font-family: "AvenirNextLTPro";
+    src: url(../../assets/Font/AvenirNextLTPro-Regular.otf) format("opentype");
+    src: url(../../assets/Font/Alternative-files/AvenirNextLTPro.ttf) format("truetype");
+    font-weight: 400;
+}
+
+//Font Bold
+@font-face {
+    font-family: "AvenirNextLTPro";
+    src: url(../../assets/Font/AvenirNextLTPro-Bold.otf) format("opentype");
+    src: url(../../assets/Font/Alternative-files/AvenirNextLTProBold.ttf) format("truetype");
+    font-weight: 700;
+}

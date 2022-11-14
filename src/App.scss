@@ -1,0 +1,47 @@
+@use "./styles/partials/global" as *;
+@use "./styles/partials/variable" as *;
+@use "./styles/partials/mixin" as *;
+@use "./styles/partials/typography" as *;
+
+.app {
+
+    &__comments-component-container{
+        width: 100%;
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+    &__featured-component-container{
+        border-top: 1px #e1e1e1 solid;
+        @include mobile{
+        }
+        @include tablet{
+        }
+        @include desktop{
+            border-top: 0px;
+            border-left: 1px #e1e1e1 solid;
+        }
+
+    }
+    &__featured-component-title-container{
+        @include mobile {
+        }
+        @include tablet {
+        }
+    }
+    &__featured-component-title{
+        color: $silver;
+        @include mobile {
+            @include mobile-subheader;
+            @include mobile-headlines-padding;
+            font-weight: 700;
+        }
+        @include tablet {
+            @include desktop-tablet-subheader;
+            @include tablet-desktop-headlines-padding;
+            font-weight: 700;
+        }
+    }
+}
+

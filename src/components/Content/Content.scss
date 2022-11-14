@@ -1,0 +1,24 @@
+@use "../../styles/partials/variable" as *;
+@use "../../styles/partials/mixin" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/global" as *;
+
+.content {
+    background-color: $brainflix-darkblack;
+    padding:0;
+
+    &__videoplayer-container {
+        display: flex;
+        justify-content: center;
+        margin-inline: auto;
+        width:100%;
+        max-width: 1080px;
+    }    
+
+    &__videoplayer {
+
+        @include mobile {
+            width: 100%;
+        }
+    }
+}

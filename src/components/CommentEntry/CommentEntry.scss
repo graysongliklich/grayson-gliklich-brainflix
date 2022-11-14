@@ -1,0 +1,121 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variable" as *;
+@use "../../styles/partials/mixin" as *;
+@use "../../styles/partials/typography" as *;
+
+.comment-entry {
+
+    &__comment-count {
+        @include mobile {
+            @include mobile-headlines-padding
+        }
+        @include tablet {
+            // @include tablet-desktop-headlines-padding
+        }
+    }
+
+    &__add-comment-container {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: 0fr 1fr;
+    }
+
+    &__user-avatar {
+        display: flex;
+        flex-direction: column;
+        border-radius: 50%;
+        &::placeholder {
+            background-color: $mercury;
+        }
+        @include mobile {
+            height: 36px;
+            width: 36px;
+        }
+        @include tablet {
+            height: 40px;
+            width: 40px;
+        }
+    }
+
+    &__input-submit-container {
+        display: flex;
+        @include mobile {
+            flex-direction: column;
+        }
+        @include tablet {
+            flex-direction: row;
+            gap: 2rem
+        }
+    }
+
+    &__input {
+        display: flex;
+        @include mobile {
+            flex-direction: column;
+        }
+        @include tablet {
+            width: 100%;
+        }
+    }
+
+    &__input-label {
+        font-size: 10px;
+        font-weight: 400;
+        color: $silver;
+        // Return here, margin needed, but displaced comment field
+        // margin-bottom: 4px;
+    }
+
+    &__input-field {
+        height: 36px;
+        border: 1px $mercury solid;
+        background-color: $alabaster;
+        border-radius: 4px;
+        &input:focus {
+            border: 2px $brainflix-blue solid;
+        }
+        &:invalid {
+            border: 1px $error-red solid;
+        }
+        @include mobile {
+            padding: 12px;
+        }
+        @include tablet {
+            padding: 0 12px;
+        }
+    }
+
+    &__sumbit-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        padding: 0px 16px;
+        border-radius: 4px;
+        background-color: $brainflix-blue;
+        &:hover {
+            background-color: $brainflix-darkblue;
+        }
+        @include mobile {
+            flex-direction: row;
+            min-width: 100%;
+            margin: 10px 0px;
+        }
+        @include tablet {
+            flex-direction: row;
+            min-width: 150px;
+        }
+    }
+
+    &__submit-icon {
+
+    }
+
+    &__submit-text {
+        font-size: 13px;
+        font-weight: 400;
+        width: 100%;
+        color: $white;
+    }
+
+}

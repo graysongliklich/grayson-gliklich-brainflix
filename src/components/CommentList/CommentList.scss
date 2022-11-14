@@ -1,0 +1,77 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variable" as *;
+@use "../../styles/partials/mixin" as *;
+@use "../../styles/partials/typography" as *;
+
+.comment-list {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 0fr 1fr;
+    border-top: 1px #e1e1e1 solid;
+    @include mobile {
+        @include mobile-component-padding;
+    }
+    @include tablet {
+    }
+    @include desktop {
+        @include tablet-desktop-component-padding;    
+    }
+
+    &__user-avatar {
+        display: flex;
+        flex-direction: column;
+        border-radius: 50%;
+        @include mobile {
+            @include mobile-component-padding;
+            height: 36px;
+            width: 36px;
+        }
+        @include tablet {
+            @include tablet-desktop-component-padding;
+            height: 40px;
+            width: 40px;
+        }
+    }
+
+    &__comment-content {
+        display:flex;
+        @include mobile {
+            flex-direction:column;
+            justify-content: center;
+        }
+
+    }
+
+    &__comment-details {
+        display: flex;
+        @include mobile {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &__user-name {
+
+    }
+
+    &__date-time {
+        color: $silver;
+        @include mobile {
+            @include mobile-subheader;
+            font-weight: 400;
+        }
+        @include tablet {
+            @include desktop-tablet-subheader;
+            font-weight: 400;
+        }
+    }
+
+    &__comment {
+        @include mobile {
+            @include mobile-bodycopy;
+        }
+        @include tablet {
+            @include desktop-tablet-bodycopy;
+        }
+    }
+}
