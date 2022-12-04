@@ -10,7 +10,7 @@ function commentList({name, timestamp, comment}) {
                     <div className="comment-list__comment-details">
                         <h3 className="comment-list__user-name">{name}</h3>
                         {/* Return here to correct timedate conversion */}
-                        <p className="comment-list__date-time">{timestamp}</p>
+                        <p className="comment-list__date-time">{Date.now(timestamp)}</p>
                     </div>
                     <p className="comment-list__comment">{comment}</p>
                 </div>

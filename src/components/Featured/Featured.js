@@ -1,4 +1,5 @@
 import "./Featured.scss";
+import {Link} from 'react-router-dom'
 
 function Featured(props) {
     return (

@@ -1,0 +1,213 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variable" as *;
+@use "../../styles/partials/mixin" as *;
+@use "../../styles/partials/typography" as *;
+
+.upload-content {
+
+}
+
+.upload-content__page-title {
+    
+}
+
+.upload-content__form {
+    display: flex;
+    @include mobile {
+        flex-direction: column;
+        justify-content: center;
+        border-top: 1px #e1e1e1 solid;
+        @include mobile-headlines-padding
+    }
+    @include tablet {
+        margin-bottom: 4px;
+        border-bottom: 1px #e1e1e1 solid;
+    }
+    @include desktop {
+        flex-direction: row;
+    }
+}
+
+.upload-content__thumbnail-container {
+    display: flex;
+    @include mobile {
+        flex-direction: column;
+    }
+    @include tablet {
+        margin-right: auto;
+        @include mobile-component-padding
+    }
+    @include desktop {
+        margin-right: 0;
+        @include tablet-desktop-component-padding
+    }
+}
+
+
+.upload-content__thumbnail-label {
+    font-size: 10px;
+    font-weight: 400;
+    color: $silver;
+}
+
+.upload-content__thumbnail {
+
+}
+
+.upload-content__inputs-container {
+    @include desktop {
+        min-width: 66%;
+    }
+}
+
+.upload-content__video-title-container {
+    display: flex;
+    @include mobile {
+        flex-direction: column;
+        @include mobile-component-padding
+    }
+    @include tablet {
+        width: 100%;
+        @include tablet-desktop-component-padding
+    }
+}
+
+.upload-content__title-label {
+    font-size: 10px;
+    font-weight: 400;
+    color: $silver;
+}
+
+.upload-content__title-input {
+    height: 36px;
+        border: 1px $mercury solid;
+        background-color: $alabaster;
+        border-radius: 4px;
+        &input:focus {
+            border: 2px $brainflix-blue solid;
+        }
+        &:invalid {
+            border: 1px $error-red solid;
+        }
+        @include mobile {
+            padding: 12px;
+        }
+        @include tablet {
+            padding: 0 12px;
+        }
+}
+
+.upload-content__description-container {
+    display: flex;
+    @include mobile {
+        flex-direction: column;
+    }
+    @include tablet {
+        width: 100%;
+    }
+}
+
+.upload-content__description-label {
+    font-size: 10px;
+    font-weight: 400;
+    color: $silver;
+}
+
+.upload-content__description-input {
+    height: 36px;
+    border: 1px $mercury solid;
+    background-color: $alabaster;
+    border-radius: 4px;
+    &input:focus {
+        border: 2px $brainflix-blue solid;
+    }
+    &:invalid {
+        border: 1px $error-red solid;
+    }
+    @include mobile {
+        padding: 12px;
+    }
+    @include tablet {
+        padding: 0 12px;
+    }
+}
+
+.upload-content__buttons-container {
+    display: flex;
+    @include mobile {
+        flex-direction: column;
+    }
+    @include tablet {
+        flex-direction: row;
+        justify-content: flex-end
+    }
+}
+
+.upload-content__publish-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0px 16px;
+    border-radius: 4px;
+    background-color: $brainflix-blue;
+    &:hover {
+        background-color: $brainflix-darkblue;
+    }
+    @include mobile {
+        flex-direction: row;
+        min-width: 100%;
+        margin: 10px 0px;
+    }
+    @include tablet {
+        flex-direction: row;
+        min-width: 150px;
+        order: 1;
+    }
+}
+
+.upload-content__publish-icon {
+
+    &:hover {
+
+    }
+}
+
+.upload-content__publish-text {
+    font-size: 13px;
+    font-weight: 400;
+    color: $white;
+    width: 100%;
+    &:hover {
+        color: $white
+    }
+}
+
+.upload-content__cancel-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0px 16px;
+    border-radius: 4px;
+    background-color: transparent;
+    @include mobile {
+        flex-direction: row;
+        min-width: 100%;
+        margin: 10px 0px;
+    }
+    @include tablet {
+        flex-direction: row;
+        min-width: 150px;
+    }
+}
+
+.upload-content__cancel-text {
+    font-size: 13px;
+    font-weight: 400;
+    color: $brainflix-blue;
+    width: 100%;
+    &:hover{
+        color: $brainflix-darkblue
+    }
+}
