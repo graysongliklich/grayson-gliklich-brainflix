@@ -1,10 +1,21 @@
 import "./Video.scss";
 import React, { useState, useEffect } from "react";
+import axios from "../../axios";
 import Likes from "../../assets/Icons/likes.svg";
 import Views from "../../assets/Icons/views.svg";
 
-function Video({ title, channel, timestamp, views, likes, description }) {
-    const [video, setVideo] = useState([]);
+function Video({ title, channel, timestamp, views, likes, description, getURL }) {
+    const [videoState, setVideoState] = useState([]);
+ 
+    useEffect(() => {
+        async function fetchData() {
+            const request = await axios.get(getURL);
+            setVideoState(request.data); //return here to correct array data
+            console.log(request);
+            return request;
+        }
+        fetchData();
+    }, [getURL]);
 
     return (
         <>

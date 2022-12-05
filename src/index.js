@@ -1,7 +1,7 @@
 import React from 'react';
+import App from './App';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
-import App from './App';
 import Upload from './pages/Upload/Upload';
 import reportWebVitals from './reportWebVitals';
 

@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.scss";
 import Header from "./components/Header/Header";
 import Content from "./components/Content/Content";
@@ -5,54 +6,12 @@ import Video from "./components/Video/Video";
 import CommentEntry from "./components/CommentEntry/CommentEntry";
 import CommentList from "./components/CommentList/CommentList";
 import Featured from "./components/Featured/Featured";
-import Upload from "./pages/Upload/Upload";
+import requests from "./requests";
+
 import VideosJSON from "./data/videos.json";
 import VideoDetailsJSON from "./data/video-details.json";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import useState from "react";
-import axios from "axios";
 
 function App() {
-    //get API key
-    let APIKey = undefined;
-
-    axios
-        .get(`https://project-2-api.herokuapp.com/register`)
-        .then((pull) => {
-            let APIKey = pull.data.api_key;
-            return APIKey;
-        })
-        .catch((error) => {
-            console.log(error);
-        });
-
-    //get videos for sidebar from API
-  
-    axios
-        .get(`https://project-2-api.herokuapp.com/videos?api_key=${APIKey}`)
-        .then((pullVideosSidebar) => {
-            let arrVideosSidebar = pullVideosSidebar.data
-            return arrVideosSidebar
-        })
-        .catch((error) => {
-            console.log(error);
-        });
-
-    //get videos main information
-
-    axios
-    .get(`https://project-2-api.herokuapp.com/videos/1af0jruup5gu?api_key=${APIKey}`)
-    .then((pullVideosMain) => {
-        let arrVideosMain = pullVideosMain
-        console.log(arrVideosMain)
-        return arrVideosMain
-    })
-    .catch((error) => {
-        console.log(error);
-    });
-
-
-
     return (
         <>
             {/* static components gen */}
@@ -67,12 +26,14 @@ function App() {
                         likes={VideoDetailsJSON[0].likes}
                         timestamp={VideoDetailsJSON[0].timestamp}
                         description={VideoDetailsJSON[0].description}
+                        getURL={requests.getVideosMain}
                     />
                     <CommentEntry />
                     <CommentList
                         name={VideoDetailsJSON[0].comments[0].name}
                         timestamp={VideoDetailsJSON[0].comments[0].timestamp}
                         comment={VideoDetailsJSON[0].comments[0].comment}
+                        getURL={requests.getVideosMain}
                     />
                     <CommentList
                         name={VideoDetailsJSON[1].comments[1].name}
@@ -95,6 +56,7 @@ function App() {
                         image={VideosJSON[0].image}
                         title={VideosJSON[0].title}
                         channel={VideosJSON[0].channel}
+                        getURL={requests.getVideosSidebar}
                     />
                     <Featured
                         image={VideosJSON[1].image}
